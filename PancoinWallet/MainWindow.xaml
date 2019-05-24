@@ -1,0 +1,62 @@
+﻿<Window x:Class="PancoinWallet.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PancoinWallet"
+        mc:Ignorable="d"
+        Title="Pancoin Wallet" Height="295" Width="800"
+        WindowStartupLocation="CenterScreen"
+        Background="#f3f3f3">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="125" />
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35" />
+            <RowDefinition Height="35" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <ScrollViewer x:Name="scrollViewer" Margin="10,7" Grid.Row="2">
+            <ListView x:Name="listView">
+                
+            </ListView>
+        </ScrollViewer>
+
+        <StackPanel Margin="10,0,10,0" Height="28" VerticalAlignment="Center" Grid.Column="1" Orientation="Horizontal">
+            <Label FontSize="14" Content="Status: " />
+            <Label x:Name="statusLabel" FontSize="14" Content="Offline" Foreground="Red"/>
+        </StackPanel>
+        
+        <StackPanel Margin="10,0,10,0" Height="28" VerticalAlignment="Center" Grid.Column="0" Orientation="Horizontal">
+            <Label FontSize="14" Content="Active address: " />
+            <Label x:Name="addressLabel" FontSize="14" Content="Not available" Foreground="Red"/>
+        </StackPanel>
+
+        <StackPanel Margin="10,0,10,0" Height="28" VerticalAlignment="Center" Grid.Column="0" Grid.Row="1" Orientation="Horizontal">
+            <Label FontSize="14" Content="Balance: " />
+            <Label x:Name="balanceLabel" FontSize="14" Content="Not available" Foreground="Red"/>
+        </StackPanel>
+
+        <Grid Grid.Column="1" Grid.Row="1" Grid.RowSpan="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="35"/>
+                <RowDefinition Height="35"/>
+                <RowDefinition Height="35"/>
+                <RowDefinition Height="35"/>
+                <RowDefinition Height="35"/>
+                <RowDefinition Height="35"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Button x:Name="buttonSend" Grid.Row="0" Content="Send transaction" Margin="10,0,10,0" Height="28" VerticalAlignment="Bottom" Click="ButtonSend_Click"/>
+            <Button x:Name="buttonContacts" Grid.Row="1" Content="Contacts" Margin="10,0,10,0" Height="28" VerticalAlignment="Bottom" Click="ButtonContacts_Click"/>
+            <Button x:Name="buttonLoad" Grid.Row="2" Content="Load wallet" Margin="10,0,10,0" Height="28" VerticalAlignment="Bottom" Click="ButtonLoad_Click"/>
+            <Button x:Name="buttonCreate" Grid.Row="3" Content="Create wallet" Margin="10,0,10,0" Height="28" VerticalAlignment="Bottom" Click="ButtonCreate_Click"/>
+            <Button x:Name="buttonMine" Grid.Row="4" Content="Mine" Margin="10,0,10,0" Height="28" VerticalAlignment="Bottom" Click="ButtonMine_Click"/>
+            <Button x:Name="buttonConnect" Grid.Row="5" Content="Connect" Margin="10,0,10,0" Height="28" VerticalAlignment="Bottom" Click="ButtonConnect_Click"/>
+        </Grid>
+    </Grid>
+</Window>
